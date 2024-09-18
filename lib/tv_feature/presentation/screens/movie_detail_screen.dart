@@ -1,19 +1,12 @@
-import 'dart:ffi';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movies_app/core/network/api_manegar.dart';
 import 'package:movies_app/enjection_contener.dart';
-import 'package:movies_app/movie_and_tv_app.dart';
 import 'package:movies_app/movie_feature/domain/entities/genres.dart';
-import 'package:movies_app/tv_feature/domain/entities/episode.dart';
 import 'package:movies_app/tv_feature/domain/entities/tv.dart';
-import 'package:movies_app/tv_feature/domain/usecases/get_episode_details_usecase.dart';
-import 'package:movies_app/tv_feature/domain/usecases/get_season_details_usecase.dart';
 import 'package:movies_app/tv_feature/presentation/bloc/bloc/season_and_episode_bloc.dart';
 import 'package:movies_app/tv_feature/presentation/bloc/tv_bloc.dart';
 import 'package:movies_app/tv_feature/presentation/bloc/tv_event.dart';
@@ -245,9 +238,6 @@ class _MovieDetailContentState extends State<MovieDetailContent> {
                     ],
                   ),
                 ),
-                // Row(
-                //   children: [],
-                // ),
                 SliverPadding(
                   padding: EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 24.0),
                   sliver: isActive

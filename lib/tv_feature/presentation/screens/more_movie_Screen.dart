@@ -1,11 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movies_app/core/network/api_manegar.dart';
 import 'package:movies_app/core/utils/app_strings.dart';
 import 'package:movies_app/enjection_contener.dart';
-import 'package:movies_app/movie_feature/presentation/screens/movie_detail_screen.dart';
 import 'package:movies_app/tv_feature/domain/entities/tv.dart';
 import 'package:movies_app/tv_feature/presentation/bloc/tv_bloc.dart';
 import 'package:movies_app/tv_feature/presentation/bloc/tv_event.dart';

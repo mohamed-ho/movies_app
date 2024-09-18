@@ -7,6 +7,7 @@ import 'package:movies_app/tv_feature/domain/entities/episode.dart';
 import 'package:movies_app/tv_feature/domain/entities/tv.dart';
 import 'package:movies_app/tv_feature/domain/usecases/get_season_details_usecase.dart';
 import 'package:movies_app/tv_feature/presentation/bloc/bloc/season_and_episode_bloc.dart';
+import 'package:movies_app/tv_feature/presentation/screens/episode_details_screen.dart';
 import 'package:shimmer/shimmer.dart';
 
 class SeasonDropDownWidget extends StatefulWidget {
@@ -74,7 +75,10 @@ class _SeasonDropDownWidgetState extends State<SeasonDropDownWidget> {
                           itemBuilder: (context, i) {
                             return Padding(
                               padding: const EdgeInsets.symmetric(vertical: 10),
-                              child: TvEpisodeWidget(state.season.episodes[i]),
+                              child: TvEpisodeWidget(
+                                  state.season.episodes[i],
+                                  state.season.episodes.sublist(i + 1),
+                                  context),
                             );
                           }),
                     );
@@ -94,8 +98,18 @@ class _SeasonDropDownWidgetState extends State<SeasonDropDownWidget> {
   }
 }
 
-Widget TvEpisodeWidget(Episode spisode) {
-  return Container(
+Widget TvEpisodeWidget(
+    Episode spisode, List<Episode> episodes, BuildContext context) {
+  return InkWell(
+    onTap: () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => EpisodeDetailsScreen(
+                    episode: spisode,
+                    episodes: episodes,
+                  )));
+    },
     child: Column(
       children: [
         Row(
